@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #F05700;
+  --color-brand-hover: #DE4F00;
+  --color-brand-light: #FFF7ED;
+  --color-brand-muted: #FED7AA;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Gulzar', serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  [dir="rtl"] {
+    font-family: 'Noto Nastaliq Urdu', 'Gulzar', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.faq-item.active .faq-answer {
+  display: block !important;
+}
+
+#downloadToast.show {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}

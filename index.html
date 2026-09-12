@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ڈیجیٹل منشی — پاکستان کا پہلا AI صوتی کھاتہ رجسٹر</title>
+    <meta
+      name="description"
+      content="کریانہ اور جنرل اسٹورز کے لیے آواز سے چلنے والا تیز ترین صوتی کھاتہ رجسٹر۔ بولیں اور حساب کتاب محفوظ کریں۔ 100% مفت۔"
+    />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+    <!-- Google Fonts: Inter & Noto Nastaliq Urdu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-900 antialiased font-sans transition-colors duration-200">
+    <!-- Top Bar / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-[#F05700] flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+            <img src="/icons/speaker_big.svg" alt="DigiMunshi Icon" class="w-6 h-6 brightness-0 invert" />
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold text-gray-900 tracking-tight" data-i18n="brand_title">ڈیجیٹل منشی</span>
+            <span class="text-[11px] font-medium text-[#F05700] tracking-wide">DIGIMUNSHI AI</span>
+          </div>
+        </a>
+
+        <!-- Nav Links (Desktop) -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+          <a href="#features" class="hover:text-[#F05700] transition-colors" data-i18n="nav_features">خصوصیات</a>
+          <a href="#demo" class="hover:text-[#F05700] transition-colors" data-i18n="nav_demo">ڈیمو ویڈیو</a>
+          <a href="#how" class="hover:text-[#F05700] transition-colors" data-i18n="nav_how">کیسے کام کرتا ہے</a>
+          <a href="#faqs" class="hover:text-[#F05700] transition-colors" data-i18n="nav_faqs">سوالات</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Language Toggle Button -->
+          <button
+            id="langToggleBtn"
+            class="px-3.5 py-2 rounded-lg border border-gray-200 hover:border-[#F05700] text-xs font-semibold text-gray-700 hover:text-[#F05700] bg-white transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
+            title="Switch Language"
+          >
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-gray-500"></i>
+            <span id="langLabel">English</span>
+          </button>
+
+          <!-- Download Button CTA -->
+          <a
+            href="#download"
+            class="px-4 py-2.5 rounded-xl bg-[#F05700] hover:bg-[#DE4F00] text-white text-xs sm:text-sm font-semibold shadow-md shadow-orange-500/25 transition-all hover:shadow-lg hover:shadow-orange-500/30 flex items-center gap-2 cursor-pointer"
+          >
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span data-i18n="header_download_btn">ڈاؤن لوڈ کریں</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="absolute top-0 right-1/2 translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-orange-100/60 via-orange-50/30 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-7 text-center lg:text-right space-y-6">
+            <!-- Badge with Flag SVG -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-[#F05700] text-xs font-semibold shadow-xs">
+              <img src="/icons/flag.svg" alt="Pakistan Flag" class="w-4 h-3 rounded-xs object-cover" />
+              <span data-i18n="hero_badge">پاکستان کا پہلا AI صوتی کھاتہ رجسٹر</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight sm:leading-snug">
+              <span data-i18n="hero_title">بولیں اور کھاتہ لکھیں — بغیر ٹائپنگ کے</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
+              کریانہ، جنرل اسٹور اور ہول سیلرز کے لیے آواز سے چلنے والا تیز ترین رجسٹر۔ بس مائیک دبائیں اور بولیں، حساب کتاب فوری محفوظ!
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a
+                id="heroDownloadBtn"
+                href="/digimunshi.apk"
+                download="DigiMunshi.apk"
+                class="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#F05700] hover:bg-[#DE4F00] text-white text-base font-bold shadow-xl shadow-orange-500/30 hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3 cursor-pointer"
+              >
+                <i data-lucide="download" class="w-5 h-5"></i>
+                <span data-i18n="cta_download_main">ڈاؤن لوڈ کریں (Android APK)</span>
+              </a>
+
+              <a
+                href="#demo"
+                class="w-full sm:w-auto px-6 py-4 rounded-xl bg-white border border-gray-200 hover:border-[#F05700] text-gray-800 hover:text-[#F05700] text-base font-semibold transition-all hover:bg-orange-50/30 flex items-center justify-center gap-2.5 cursor-pointer shadow-xs"
+              >
+                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                <span data-i18n="cta_watch_demo">ڈیمو ویڈیو دیکھیں</span>
+              </a>
+            </div>
+
+            <!-- Trust Points Strip -->
+            <div class="pt-6 border-t border-gray-200/70 grid grid-cols-3 gap-4 text-center lg:text-right">
+              <div class="flex items-center gap-2 justify-center lg:justify-start">
+                <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                  <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-gray-700" data-i18n="trust_free">100% مفت استعمال</span>
+              </div>
+              <div class="flex items-center gap-2 justify-center lg:justify-start">
+                <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-[#F05700]">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-gray-700" data-i18n="trust_offline">آف لائن سپورٹ</span>
+              </div>
+              <div class="flex items-center gap-2 justify-center lg:justify-start">
+                <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-gray-700" data-i18n="trust_whatsapp">واٹس ایپ رسیدیں</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Phone Showcase -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-[340px] bg-white rounded-[36px] p-4 shadow-2xl border-4 border-gray-900 ring-8 ring-gray-100">
+              <!-- Phone Speaker notch -->
+              <div class="w-20 h-4 bg-gray-900 rounded-full mx-auto mb-3"></div>
+
+              <!-- App Screen Interface -->
+              <div class="space-y-4">
+                <!-- App Top Bar -->
+                <div class="flex items-center justify-between pb-2 border-b border-gray-100">
+                  <div class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center bg-gray-50">
+                    <img src="/icons/shop.svg" alt="Shop" class="w-4 h-4 opacity-75" />
+                  </div>
+                  <div class="text-right">
+                    <p class="text-xs font-bold text-gray-900">عمران کریانہ اسٹور</p>
+                    <p class="text-[10px] text-gray-400 font-mono">+92 300 1234567</p>
+                  </div>
+                </div>
+
+                <!-- Total Outstanding Card (#F05700 Brand) -->
+                <div class="rounded-2xl bg-[#F05700] p-4 text-white shadow-lg shadow-orange-500/20 text-right space-y-1">
+                  <div class="flex items-center justify-between text-xs opacity-90">
+                    <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px] font-semibold">12 گاہک</span>
+                    <span>کل بقایا ادھار</span>
+                  </div>
+                  <p class="text-2xl font-black tracking-tight">Rs. 84,500</p>
+                  <p class="text-[10px] opacity-80">آج کی وصولی: Rs. 14,000</p>
+                </div>
+
+                <!-- Live Voice Speech Bubble -->
+                <div class="bg-orange-50 border border-orange-200 rounded-2xl p-3 text-right space-y-1.5 animate-pulse">
+                  <div class="flex items-center gap-1.5 justify-end text-[11px] font-bold text-[#F05700]">
+                    <span>دکاندار:</span>
+                    <i data-lucide="user" class="w-3.5 h-3.5 text-[#F05700]"></i>
+                  </div>
+                  <p class="text-xs font-semibold text-gray-800">"حماد کے کھاتے میں بیڈ کے 20000 روپے لکھ دو"</p>
+                </div>
+
+                <!-- DigiMunshi AI Voice Response -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-3 text-right space-y-2 shadow-xs">
+                  <div class="flex items-center justify-between text-[11px] font-bold text-emerald-600">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+                    <div class="flex items-center gap-1.5">
+                      <span>ڈیجیٹل منشی:</span>
+                      <i data-lucide="bot" class="w-3.5 h-3.5 text-emerald-600"></i>
+                    </div>
+                  </div>
+                  <p class="text-xs text-gray-700 leading-relaxed">
+                    "حماد کا پہلے سے ادھار 25000 روپے تھا۔ کیا اس میں بیڈ کے 20000 روپے اور ادھار لکھ دوں؟"
+                  </p>
+                  <div class="flex gap-2 justify-end pt-1">
+                    <span class="px-3 py-1 rounded-lg bg-[#F05700] text-white text-[11px] font-bold">ہاں، لکھ دو</span>
+                    <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-600 text-[11px] font-medium">منسوخ</span>
+                  </div>
+                </div>
+
+                <!-- Center Mic Button Area -->
+                <div class="pt-2 flex flex-col items-center justify-center">
+                  <div class="w-16 h-16 rounded-full bg-white border-2 border-[#F05700] shadow-lg shadow-orange-500/25 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer">
+                    <img src="/icons/speaker_big.svg" alt="Mic" class="w-7 h-7" />
+                  </div>
+                  <span class="text-[11px] font-bold text-[#F05700] mt-1.5">بولنے کے لیے دبائیں</span>
+                </div>
+
+                <!-- Bottom Bar inside Mockup -->
+                <div class="h-10 bg-[#F05700] rounded-xl flex items-center justify-around px-4">
+                  <img src="/icons/list.svg" alt="List" class="w-4 h-4 brightness-0 invert opacity-90" />
+                  <img src="/icons/speaker_small.svg" alt="Speak" class="w-4 h-4 brightness-0 invert" />
+                  <img src="/icons/home.svg" alt="Home" class="w-4 h-4 brightness-0 invert opacity-90" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Video Demo Section -->
+    <section id="demo" class="py-16 bg-white border-y border-gray-200/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <!-- Tag -->
+        <span class="inline-block px-3 py-1 rounded-full bg-orange-100/80 text-[#F05700] text-xs font-bold uppercase tracking-wider" data-i18n="demo_tag">عملی نمونہ</span>
+        <!-- Title -->
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900" data-i18n="demo_title">دیکھیں ڈیجیٹل منشی کیسے کام کرتا ہے</h2>
+        <!-- Subtitle -->
+        <p class="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto" data-i18n="demo_subtitle">
+          صرف ایک منٹ میں جانیے کہ آپ اپنی دکان کا سارا ادھار اور وصولی کس طرح بول کر لکھ سکتے ہیں۔
+        </p>
+
+        <!-- Video Player Frame -->
+        <div id="videoFrame" class="relative mt-8 rounded-2xl overflow-hidden bg-gray-950 border-2 border-gray-800 shadow-2xl aspect-video max-w-4xl mx-auto flex items-center justify-center group">
+          <!-- Video Element -->
+          <video id="demoVideo" class="w-full h-full object-cover" poster="/public/favicon.svg">
+            <source src="/demo.mp4" type="video/mp4" />
+          </video>
+
+          <!-- Video Overlay Poster & Play Button -->
+          <div id="videoOverlay" class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col items-center justify-center p-6 text-white cursor-pointer transition-opacity">
+            <div id="playBtnTrigger" class="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-[#F05700] hover:bg-[#DE4F00] flex items-center justify-center shadow-2xl shadow-orange-500/50 group-hover:scale-110 transition-transform">
+              <i data-lucide="play" class="w-8 h-8 fill-current translate-x-0.5 text-white"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold mt-4" data-i18n="video_prompt_title">بولیں اور جادو دیکھیں!</h3>
+            <p class="text-xs sm:text-sm text-gray-300 mt-1" data-i18n="video_prompt_sub">ویڈیو چلانے کے لیے اوپر کلک کریں</p>
+          </div>
+
+          <!-- Video Custom Controls Bar -->
+          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent p-3 flex items-center gap-3 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+            <button id="ctrlPlayPause" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center cursor-pointer">
+              <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+            </button>
+            <div id="progressTrack" class="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden cursor-pointer">
+              <div id="progressFill" class="h-full bg-[#F05700] w-0 transition-all duration-100"></div>
+            </div>
+            <span id="videoTime" class="font-mono text-[11px] text-gray-300">0:00 / 1:20</span>
+            <button id="ctrlMute" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center cursor-pointer">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+            </button>
+            <button id="ctrlFullscreen" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center cursor-pointer">
+              <i data-lucide="maximize" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video 3-Features Strip -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 text-right">
+          <div class="p-4 rounded-xl bg-orange-50/60 border border-orange-100 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-[#F05700]">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-gray-900" data-i18n="vf_1_title">1 سیکنڈ میں اندراج</p>
+              <p class="text-xs text-gray-600" data-i18n="vf_1_sub">بغیر اسپیلنگ لکھے فوری کھاتہ</p>
+            </div>
+          </div>
+          <div class="p-4 rounded-xl bg-orange-50/60 border border-orange-100 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-gray-900" data-i18n="vf_2_title">1000+ پر حفاظتی تصدیق</p>
+              <p class="text-xs text-gray-600" data-i18n="vf_2_sub">بڑی رقم پر غلطی کا کوئی امکان نہیں</p>
+            </div>
+          </div>
+          <div class="p-4 rounded-xl bg-orange-50/60 border border-orange-100 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-gray-900" data-i18n="vf_3_title">واٹس ایپ الرٹ</p>
+              <p class="text-xs text-gray-600" data-i18n="vf_3_sub">گاہک کو فوری میسج اور یاددہانی</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section id="features" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+          <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-[#F05700] text-xs font-bold uppercase" data-i18n="features_tag">اہم خصوصیات</span>
+          <h2 class="text-3xl font-extrabold text-gray-900" data-i18n="features_title">دکانداروں کی ہر ضرورت کا مکمل حل</h2>
+          <p class="text-base text-gray-600" data-i18n="features_subtitle">روایتی کاپی اور رجسٹر کے جھنجھٹ کو ختم کریں، اپنے کاروبار کو جدید اور محفوظ بنائیں۔</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-right">
+          <!-- Feature 1 -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-orange-200 transition-all space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-orange-100/80 flex items-center justify-center">
+              <img src="/icons/speaker_big.svg" alt="STT" class="w-6 h-6" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="feat_1_title">اردو اور پنجابی صوتی شناخت</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="feat_1_desc">
+              پاکستانی لہجے کے مطابق تربیت یافتہ AI۔ چاہے آپ اردو میں بولیں یا ملا جلا، ڈیجیٹل منشی نام اور رقم درست سمجھتا ہے۔
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-orange-200 transition-all space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+              <img src="/icons/tick.svg" alt="Guardrails" class="w-6 h-6" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="feat_2_title">حفاظتی تصدیق (Guardrails)</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="feat_2_desc">
+              1000 روپے سے زائد وصولی یا پورا کھاتہ صاف کرنے سے پہلے ایپ خودکار تصدیق مانگتی ہے تاکہ کوئی غلط اندراج نہ ہو۔
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-orange-200 transition-all space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center">
+              <img src="/icons/send_message.svg" alt="WhatsApp" class="w-6 h-6" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="feat_3_title">ایک کلک پر واٹس ایپ رسید</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="feat_3_desc">
+              گاہک کو بقایا رقم کا میسج یا مکمل کھاتہ تفصیل واٹس ایپ پر بھیج کر ادھار کی وصولی کو تین گنا تیز کریں۔
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-orange-200 transition-all space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-orange-100/80 flex items-center justify-center">
+              <img src="/icons/khata.svg" alt="Cloud" class="w-6 h-6" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="feat_4_title">آف لائن سپورٹ اور ڈیٹا کلاؤڈ</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="feat_4_desc">
+              انٹرنیٹ بند ہونے پر بھی حساب کتاب محفوظ رہتا ہے، اور انٹرنیٹ ملتے ہی خودکار کلاؤڈ بیک اپ بن جاتا ہے۔ فون گمنے پر بھی ڈیٹا محفوظ!
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-orange-200 transition-all space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
+              <img src="/icons/lock.svg" alt="PIN" class="w-5 h-6" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="feat_5_title">4 ہندسوں کا محفوظ پن کوڈ</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="feat_5_desc">
+              آپ کے علاوہ کوئی دوسرا شخص دکان کا کھاتہ نہیں کھول سکتا۔ پن کوڈ سیکیورٹی ہر وقت فعال رہتی ہے۔
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md hover:border-orange-200 transition-all space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-orange-100/80 flex items-center justify-center">
+              <img src="/icons/list.svg" alt="Dashboard" class="w-6 h-6" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900" data-i18n="feat_6_title">کل واجب الوصول ادھار ڈیش بورڈ</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="feat_6_desc">
+              ایک نظر میں جانیے کہ مارکیٹ میں آپ کا کتنا پیسہ پھنسا ہوا ہے، اور کن گاہکوں سے آج رقم وصول کرنی ہے۔
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works (3 Steps) -->
+    <section id="how" class="py-20 bg-white border-t border-gray-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+          <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-[#F05700] text-xs font-bold uppercase" data-i18n="how_tag">طریقہ کار</span>
+          <h2 class="text-3xl font-extrabold text-gray-900" data-i18n="how_title">استعمال کرنے کا آسان ترین طریقہ</h2>
+          <p class="text-base text-gray-600" data-i18n="how_subtitle">نہ ٹائپنگ کی ضرورت، نہ انگریزی سیکھنے کی فکر۔ 3 آسان مراحل:</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 text-right">
+          <!-- Step 1 -->
+          <div class="relative bg-orange-50/40 border border-orange-100 p-8 rounded-3xl space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F05700] text-white flex items-center justify-center text-xl font-black shadow-md shadow-orange-500/20">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-gray-900" data-i18n="step_1_title">بٹن دبائیں اور بولیں</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="step_1_desc">
+              مائیک کا بٹن دبائیں اور عام انداز میں بولیں: "عثمان کو پانچ سو روپے کا گھی ادھار دیا"۔
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative bg-orange-50/40 border border-orange-100 p-8 rounded-3xl space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F05700] text-white flex items-center justify-center text-xl font-black shadow-md shadow-orange-500/20">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-gray-900" data-i18n="step_2_title">فوری صوتی تصدیق</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="step_2_desc">
+              ڈیجیٹل منشی آپ کو آواز میں جواب دے کر بتائے گا اور سکرین پر اندراج محفوظ کر دے گا۔
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative bg-orange-50/40 border border-orange-100 p-8 rounded-3xl space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#F05700] text-white flex items-center justify-center text-xl font-black shadow-md shadow-orange-500/20">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-gray-900" data-i18n="step_3_title">واٹس ایپ رسید شیئر</h3>
+            <p class="text-sm text-gray-600 leading-relaxed" data-i18n="step_3_desc">
+              ضرورت پڑنے پر گاہک کو ایک کلک سے واٹس ایپ پر رسید یا یاددہانی کا پیغام بھیج دیں۔
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Shopkeeper Types -->
+    <section class="py-14 bg-gray-50 border-t border-gray-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-gray-500">ہر قسم کے پاکستانی کاروبار کے لیے موزوں</p>
+        <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+          <div class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200/80 shadow-2xs">
+            <img src="/icons/karyana_store.svg" alt="Kiryana" class="w-5 h-5" />
+            <span class="text-sm font-bold text-gray-800">کریانہ اسٹورز</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200/80 shadow-2xs">
+            <img src="/icons/general_store.svg" alt="General" class="w-5 h-5" />
+            <span class="text-sm font-bold text-gray-800">جنرل اسٹورز</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200/80 shadow-2xs">
+            <img src="/icons/clothing_store.svg" alt="Clothing" class="w-5 h-5" />
+            <span class="text-sm font-bold text-gray-800">کپڑے کی دکانیں</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200/80 shadow-2xs">
+            <img src="/icons/medical_store.svg" alt="Medical" class="w-5 h-5" />
+            <span class="text-sm font-bold text-gray-800">میڈیکل اسٹورز</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faqs" class="py-20 bg-white border-t border-gray-200/80">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-[#F05700] text-xs font-bold uppercase" data-i18n="faq_tag">عمومی سوالات</span>
+          <h2 class="text-3xl font-extrabold text-gray-900" data-i18n="faq_title">اکثر پوچھے جانے والے سوالات</h2>
+          <p class="text-sm sm:text-base text-gray-600" data-i18n="faq_subtitle">اگر آپ کے ذہن میں کوئی سوال ہے تو یہاں جواب موجود ہے:</p>
+        </div>
+
+        <div class="space-y-4 text-right">
+          <!-- FAQ 1 -->
+          <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden bg-gray-50/50">
+            <button class="faq-question w-full p-5 text-right font-bold text-gray-900 flex items-center justify-between cursor-pointer hover:bg-gray-100/50 transition-colors">
+              <span data-i18n="faq_q1">کیا ڈیجیٹل منشی استعمال کرنا بالکل مفت ہے؟</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-[#F05700] transition-transform duration-200"></i>
+            </button>
+            <div class="faq-answer hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-white" data-i18n="faq_a1">
+              جی ہاں! بنیادی صوتی کھاتہ، گاہکوں کا اندراج، اور واٹس ایپ شیئرنگ تمام دکانداروں کے لیے بالکل مفت ہے۔
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden bg-gray-50/50">
+            <button class="faq-question w-full p-5 text-right font-bold text-gray-900 flex items-center justify-between cursor-pointer hover:bg-gray-100/50 transition-colors">
+              <span data-i18n="faq_q2">کیا یہ اردو اور پنجابی لہجہ ٹھیک سے سمجھتا ہے؟</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-[#F05700] transition-transform duration-200"></i>
+            </button>
+            <div class="faq-answer hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-white" data-i18n="faq_a2">
+              بالکل! ڈیجیٹل منشی کا صوتی AI ماڈل خاص طور پر پاکستانی کریانہ، جنرل اسٹورز، اور بازاروں کے لہجے اور عام اعداد (جیسے ڈیڑھ سو، ڈھائی ہزار، پندرہ سو) کے لیے ڈیزائن کیا گیا ہے۔
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden bg-gray-50/50">
+            <button class="faq-question w-full p-5 text-right font-bold text-gray-900 flex items-center justify-between cursor-pointer hover:bg-gray-100/50 transition-colors">
+              <span data-i18n="faq_q3">اگر میرا فون چوری یا خراب ہو جائے تو کیا کھاتہ ختم ہو جائے گا؟</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-[#F05700] transition-transform duration-200"></i>
+            </button>
+            <div class="faq-answer hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-white" data-i18n="faq_a3">
+              ہرگز نہیں! آپ کا سارا حساب کتاب محفوظ کلاؤڈ پر بیک اپ رہتا ہے۔ نئے فون میں اپنا فون نمبر اور پن کوڈ درج کریں اور سارا ڈیٹا فوری واپس حاصل کریں۔
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden bg-gray-50/50">
+            <button class="faq-question w-full p-5 text-right font-bold text-gray-900 flex items-center justify-between cursor-pointer hover:bg-gray-100/50 transition-colors">
+              <span data-i18n="faq_q4">کیا میں گاہک کا کھاتہ غلطی سے ڈیلیٹ کر سکتا ہوں؟</span>
+              <i data-lucide="chevron-down" class="faq-chevron w-4 h-4 text-[#F05700] transition-transform duration-200"></i>
+            </button>
+            <div class="faq-answer hidden p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-gray-100 bg-white" data-i18n="faq_a4">
+              نہیں۔ ڈیجیٹل منشی میں سخت ڈیلیٹ گارڈ ریلز موجود ہیں، کھاتہ صاف کرنے سے پہلے واضح تصدیق پوچھی جاتی ہے اور پرانا ڈیٹا مکمل محفوظ رہتا ہے۔
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Download CTA Banner -->
+    <section id="download" class="py-16 bg-[#F05700] text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider" data-i18n="banner_pill">آج ہی شروعات کریں</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold max-w-3xl mx-auto leading-tight" data-i18n="banner_title">
+          اپنی دکان کا کھاتہ ڈیجیٹل بنائیں اور وصولی تیز کریں!
+        </h2>
+        <p class="text-base text-orange-100 max-w-2xl mx-auto" data-i18n="banner_sub">
+          ابھی فری اینڈرائیڈ ایپ ڈاؤن لوڈ کریں اور کاپی پنسل کے جھنجھٹ سے ہمیشہ کے لیے نجات پائیں۔
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            id="footerDownloadBtn"
+            href="/digimunshi.apk"
+            download="DigiMunshi.apk"
+            class="px-8 py-4 rounded-xl bg-white text-[#F05700] text-base font-extrabold shadow-2xl hover:bg-orange-50 hover:scale-105 transition-all flex items-center gap-3 cursor-pointer"
+          >
+            <i data-lucide="download" class="w-5 h-5"></i>
+            <span data-i18n="cta_download_main">ڈاؤن لوڈ کریں (Android APK)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-12 border-t border-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-12 gap-8 items-center text-center md:text-right">
+          <div class="md:col-span-6 space-y-2">
+            <div class="flex items-center justify-center md:justify-start gap-2">
+              <div class="w-8 h-8 rounded-lg bg-[#F05700] flex items-center justify-center">
+                <img src="/icons/speaker_big.svg" alt="Icon" class="w-4 h-4 brightness-0 invert" />
+              </div>
+              <span class="text-lg font-bold text-white" data-i18n="brand_title">ڈیجیٹل منشی</span>
+            </div>
+            <p class="text-xs text-gray-500" data-i18n="footer_desc">پاکستان کے تمام دکانداروں اور تاجروں کے لیے جدید ترین AI صوتی کھاتہ حل۔</p>
+          </div>
+
+          <div class="md:col-span-6 flex flex-wrap justify-center md:justify-end gap-6 text-xs font-semibold text-gray-400">
+            <a href="#features" class="hover:text-white transition-colors" data-i18n="nav_features">خصوصیات</a>
+            <a href="#demo" class="hover:text-white transition-colors" data-i18n="nav_demo">ڈیمو ویڈیو</a>
+            <a href="#how" class="hover:text-white transition-colors" data-i18n="nav_how">طریقہ کار</a>
+            <a href="#faqs" class="hover:text-white transition-colors" data-i18n="nav_faqs">سوالات</a>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-900 text-center text-[11px] text-gray-600 flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p>© 2026 DigiMunshi (دیجی منشی). جملہ حقوق محفوظ ہیں۔</p>
+          <p class="flex items-center justify-center gap-1">
+            <span>Made with</span>
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-red-500 fill-current"></i>
+            <span>for Pakistan's Dukandars</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification for Download -->
+    <div id="downloadToast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+      <div class="bg-gray-900 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-gray-800">
+        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+        <span class="text-xs font-semibold">ڈاؤن لوڈ شروع ہو رہا ہے... (DigiMunshi APK)</span>
+      </div>
+    </div>
+
+    <!-- Client Logic -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
