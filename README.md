@@ -51,4 +51,4 @@ npm run preview
 
 - **Mobile App (React Native / Expo)**: [digimunshi-mobile](https://github.com/HammadIsmail/digimunshi-mobile)
 - **Backend API (FastAPI / Neon Postgres)**: [digimunshi-backend](https://github.com/HammadIsmail/digimunshi-backend)
-- **Landing Page (Vite / Tailwind)**: [digimunshi-landing-page](https://github.com/HammadIsmail/digimunshi-landing-page)
+
