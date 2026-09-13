@@ -79,7 +79,7 @@ const translations = {
     cta_download_main: 'ڈاؤن لوڈ کریں (Android APK)',
     cta_watch_demo: 'ڈیمو ویڈیو دیکھیں',
     trust_free: '100% مفت استعمال',
-    trust_offline: 'آف لائن سپورٹ',
+    trust_offline: 'محفوظ کلاؤڈ بیک اپ',
     trust_whatsapp: 'واٹس ایپ رسیدیں',
     demo_tag: 'عملی نمونہ',
     demo_title: 'دیکھیں ڈیجیٹل منشی کیسے کام کرتا ہے',
@@ -101,8 +101,8 @@ const translations = {
     feat_2_desc: '1000 روپے سے زائد وصولی یا پورا کھاتہ صاف کرنے سے پہلے ایپ خودکار تصدیق مانگتی ہے تاکہ کوئی غلط اندراج نہ ہو۔',
     feat_3_title: 'ایک کلک پر واٹس ایپ رسید',
     feat_3_desc: 'گاہک کو بقایا رقم کا میسج یا مکمل کھاتہ تفصیل واٹس ایپ پر بھیج کر ادھار کی وصولی کو تین گنا تیز کریں۔',
-    feat_4_title: 'آف لائن سپورٹ اور ڈیٹا کلاؤڈ',
-    feat_4_desc: 'انٹرنیٹ بند ہونے پر بھی حساب کتاب محفوظ رہتا ہے، اور انٹرنیٹ ملتے ہی خودکار کلاؤڈ بیک اپ بن جاتا ہے۔ فون گمنے پر بھی ڈیٹا محفوظ!',
+    feat_4_title: 'ریئل ٹائم کلاؤڈ سنک اور سیکیورٹی',
+    feat_4_desc: 'آپ کا سارا کھاتہ 100% محفوظ کلاؤڈ پر محفوظ رہتا ہے۔ فون خراب یا تبدیل ہونے کی صورت میں بھی صرف اپنا نمبر اور پن لگائیں، سارا ریکارڈ فوری واپس!',
     feat_5_title: '4 ہندسوں کا محفوظ پن کوڈ',
     feat_5_desc: 'آپ کے علاوہ کوئی دوسرا شخص دکان کا کھاتہ نہیں کھول سکتا۔ پن کوڈ سیکیورٹی ہر وقت فعال رہتی ہے۔',
     feat_6_title: 'کل واجب الوصول ادھار ڈیش بورڈ',
@@ -150,7 +150,7 @@ const translations = {
     cta_download_main: 'Download (Android APK)',
     cta_watch_demo: 'Watch Demo Video',
     trust_free: '100% Free to Use',
-    trust_offline: 'Offline Support',
+    trust_offline: 'Real-Time Cloud Sync',
     trust_whatsapp: 'WhatsApp Receipts',
     demo_tag: 'Interactive Demo',
     demo_title: 'See How DigiMunshi Works in Action',
@@ -172,8 +172,8 @@ const translations = {
     feat_2_desc: 'Payments exceeding Rs. 1,000 and full khata clear commands strictly require your verbal or tap confirmation before saving.',
     feat_3_title: '1-Click WhatsApp Reminders',
     feat_3_desc: 'Send payment reminder summaries or full statements to your customers via WhatsApp in one tap to recover credit 3x faster.',
-    feat_4_title: 'Offline-First & Cloud Sync',
-    feat_4_desc: 'Continue working even when mobile data is down. Your data automatically syncs to our encrypted cloud as soon as connection restores.',
+    feat_4_title: 'Real-Time Cloud Sync & Security',
+    feat_4_desc: 'All your customer khata entries are securely backed up to the cloud in real time. Switch or restore to a new phone instantly using your phone number and PIN.',
     feat_5_title: '4-Digit Secure PIN',
     feat_5_desc: 'Keep your financial numbers private. PIN security ensures only you can access your shop records.',
     feat_6_title: 'Total Outstanding Dues Dashboard',
@@ -386,9 +386,11 @@ faqItems.forEach((item) => {
 });
 
 // --- Download APK Trigger & Toast Notification ---
+const APK_DOWNLOAD_URL = 'https://drive.google.com/uc?export=download&id=1cSu6zdQlEwOfCWcl_FoPNSZ2t7KN89Js';
 const toast = document.getElementById('downloadToast');
+
 function triggerDownload(e) {
-  e.preventDefault();
+  if (e) e.preventDefault();
   
   if (toast) {
     toast.classList.add('show');
@@ -397,12 +399,7 @@ function triggerDownload(e) {
     }, 4500);
   }
 
-  const link = document.createElement('a');
-  link.href = '/digimunshi.apk';
-  link.download = 'DigiMunshi-v1.0.4.apk';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  window.open(APK_DOWNLOAD_URL, '_blank', 'noopener,noreferrer');
 }
 
 const heroDownloadBtn = document.getElementById('heroDownloadBtn');
